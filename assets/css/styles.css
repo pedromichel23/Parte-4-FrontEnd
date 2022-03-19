@@ -53,6 +53,9 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-right: 4rem;
+        margin-top: .5rem;
+        margin-left: .5rem;
     }
 
         .top .crystal .blue-crystal {
@@ -85,8 +88,76 @@ main {
                     margin-bottom: 1.3rem;
                 }
 
+    /* BASE PROPERTIES LIGHTS - START*/
+    .top .colors-lights-base {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        display: flex;        
+        justify-content: center;
+        align-items: center;
+        margin: .5rem 1rem 0rem 0rem;        
+    }
+
+    .top .color-lights-shadows {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        margin-left: .15rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .top .color-lights-tiny {
+        width: .7rem;
+        height: .7rem;
+        border-radius: 50%;
+        margin-right: .3rem;                
+        margin-top: .15rem;
+    }
+    /* BASE PROPERTIES LIGHTS - END*/
+
+    .top .red-light {
+        background-color: var(--red-color-lights);     
+    }
+
+        .top .red-light .red-shadow {
+            background-color: var(--red-color-shadow-lights);        
+        }
+
+            .top .red-light .red-shadow .red-tiny {
+                background-color: var(--red-color-tiny-lights);
+            }
+
+    .top .yellow-light {
+        background-color: var(--yellow-color-lights);
+    }
+
+        .top .yellow-light .yellow-shadow {
+            background-color: var(--yellow-color-shadow-lights);
+        }
+
+            .top .yellow-light .yellow-shadow .yellow-tiny {
+                background-color: var(--yellow-color-tiny-lights);
+            }
+
+    .top .green-light {
+            background-color: var(--green-color-lights);
+        }
+
+            .top .green-light .green-shadow {
+                background-color: var(--green-color-shadow-lights);
+            }
+
+                .top .green-light .green-shadow .green-tiny {
+                    background-color: var(--green-color-tiny-lights);
+                }
+    
+/* SCREEN SECTION - START */
 .screens {
     background-color: var(--base-red-color);
     width: 100%;
     height: 85vh;
 }
+
+/* SCREEN SECTION - END */
