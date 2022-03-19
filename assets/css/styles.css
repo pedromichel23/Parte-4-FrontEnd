@@ -158,6 +158,38 @@ main {
     background-color: var(--base-red-color);
     width: 100%;
     height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+    .screens .dark-red {
+        background-color: var(--red-color-borders);
+        width: 90%;
+        height: 90%;
+        border: .9rem solid var(--red-color-borders);
+        display: flex;        
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+        .screens .dark-red .pokemon-screen {
+            background-color: var(--light-yellow-color-pokemon-screen);
+            width: 100%;
+            height: 35%;
+
+        }
+
+        .screens .dark-red .pokemon-stats-screen {
+            background-color: var(--dark-green-color-screens);
+            width: 100%;
+            height: 25%;
+        }
+
+        .screens .dark-red .other-controllers {
+            background-color: var(--red-color-borders);
+            width: 100%;
+            height: 40%;
+        }
 
 /* SCREEN SECTION - END */
