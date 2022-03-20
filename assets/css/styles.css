@@ -160,36 +160,151 @@ main {
     height: 85vh;
     display: flex;
     justify-content: center;
+    align-items: center;  
+}
+
+.screens .screen-border {
+    background-color:  var(--cream-color-screen-borders);
+    display: flex;
+    justify-content: center;
     align-items: center;
+}
+
+.screens .screen-border .small-screens {
+    background-color: var(--dark-green-color-screens);
+    width: 93%;
+    height: 80%; 
 }
 
     .screens .dark-red {
         background-color: var(--red-color-borders);
-        width: 90%;
-        height: 90%;
-        border: .9rem solid var(--red-color-borders);
-        display: flex;        
-        flex-direction: column;
-        flex-wrap: nowrap;
+        width: 93%;
+        height: 93%;
+        display: flex;              
+        justify-content: center;
+        align-items: center;
     }
 
-        .screens .dark-red .pokemon-screen {
-            background-color: var(--light-yellow-color-pokemon-screen);
-            width: 100%;
-            height: 35%;
-
-        }
-
-        .screens .dark-red .pokemon-stats-screen {
-            background-color: var(--dark-green-color-screens);
-            width: 100%;
-            height: 25%;
-        }
-
-        .screens .dark-red .other-controllers {
+        .screens .dark-red .dark-red-border {
             background-color: var(--red-color-borders);
-            width: 100%;
-            height: 40%;
+            width: 90%;
+            height: 95%;
+            display: grid;                
+            grid-template-columns: 1fr;            
+            grid-template-rows: 1.3fr .7fr 1fr;
+            gap: .9rem;
         }
+
+        .screens .dark-red .dark-red-border .pokemon-screen-wrapper {                        
+            grid-column: 1 / 2;                       
+        }
+
+            .screens .dark-red .dark-red-border .pokemon-screen-wrapper .pokemon-screen {
+                background-color: var(--light-yellow-color-pokemon-screen);
+                width: 93%;
+                height: 93%;                
+            }
+
+        .screens .dark-red .dark-red-border .pokemon-stats-wrapper {            
+            grid-column: 1 / 2;           
+        }
+
+            .screens .dark-red .dark-red-border .pokemon-stats-wrapper .pokemon-stats-screen {
+                background-color: var(--dark-green-color-screens);
+                width: 93%;
+                height: 90%;               
+            }
+
+            .screens .dark-red .dark-red-border .other-controllers {
+                background-color: var(--red-color-borders);
+                grid-column: 1 / 2;
+                display: grid;
+                grid-template-columns: 1.5fr .5fr;
+                grid-template-rows: repeat(3, 1fr);
+                gap: .8rem;
+            }
+
+                .screens .dark-red .dark-red-border .other-controllers .type-pokemon-wrapper {
+                    grid-column: 1 / 2;
+                }                  
+
+                    .screens .dark-red .dark-red-border .other-controllers .type-pokemon-wrapper .type-pokemon input{                        
+                        background-color: var(--dark-green-color-screens);
+                        border: none;
+                        width: 97%;
+                        height: 90%;
+                    }
+
+                    .screens .dark-red .dark-red-border .other-controllers .type-pokemon-wrapper .type-pokemon input:focus {
+                        outline: none;
+                    }
+
+                .screens .dark-red .dark-red-border .other-controllers .search-button-wrapper {
+                    background-color: var(--red-color-borders);
+                    grid-column: 2 / 3;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .screens .dark-red .dark-red-border .other-controllers .search-button-wrapper .search-button-base {
+                    background-color: var(--black-color-search-button);
+                    width: 4rem;
+                    height: 4rem;
+                    border-radius: 50%;
+                    display: flex;                    
+                    justify-content: flex-end;
+                    align-items: fle;
+                    text-decoration: none;                    
+                }
+
+                .screens .dark-red .dark-red-border .other-controllers .search-button-wrapper .search-button-base .content-search-button {
+                    background-color: var(--light-black-color-search-button);
+                    border-radius: 50%;
+                    width: 3.7rem;
+                    height: 3.7rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #fff;                   
+                }                  
+                   
+
+                .screens .dark-red .dark-red-border .other-controllers .height-screen-wrapper {
+                    grid-column: 1 / 2;
+                }
+                   
+                .screens .dark-red .dark-red-border .other-controllers .blue-buttons-wrapper {
+                    background-color: var(--blue-color-other-buttons);
+                    grid-column: 2 / 3;
+                    grid-row: 2 / 4;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: flex-start;
+                }
+
+                    .screens .dark-red .dark-red-border .other-controllers .blue-buttons-wrapper .blue-buttons {
+                        background-color: var(--light-blue-other-buttons);
+                        width: 95%;
+                        height: 95%;
+                        display: grid;
+                        grid-template-columns: repeat(1, 1fr);
+                        grid-template-rows: repeat(3, 1fr);
+                        gap: .8px;
+                    }
+
+                        .screens .dark-red .dark-red-border .other-controllers .blue-buttons-wrapper .blue-buttons .blue-button { 
+                            border: 1px solid rgb(63, 62, 62);                        
+                        }
+
+                .screens .dark-red .dark-red-border .other-controllers .weight-screen-wrapper {
+                    grid-column: 1 / 2;
+                }
+
+       
+            
+
+            
+    
 
 /* SCREEN SECTION - END */
