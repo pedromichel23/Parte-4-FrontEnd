@@ -23,11 +23,18 @@
     --light-black-color-search-button: #262626;
     --blue-color-other-buttons: #076AA3;
     --light-blue-other-buttons: #139AE7;
-
 }
 
-main {
-    background-color: lightblue;
+@font-face {
+    font-family: retro-gaming;
+    src: url('../fonts/Retro-Gaming.ttf');
+}
+
+body {
+    font-family: 'retro-gaming';
+}
+
+main {    
     width: 100%;
     height: 100vh;
     display: flex;
@@ -39,13 +46,23 @@ main {
     background-color: var(--base-red-color);
     width: 100%;
     height: 15vh;
-    display: flex;    
+    /* display: flex;    
     flex-direction: row;
-    flex-wrap: nowrap;
-    border-bottom: 1rem solid var(--red-color-borders);    
+    flex-wrap: nowrap; */
+    display: flex;      
+    flex-direction: column;
 }
 
-    .top .crystal {
+.top .crystal-lights-wrapper {
+    width: 100%;
+    height: 90%;
+    display: flex;    
+    flex-direction: row;
+    flex-wrap: nowrap;    
+}
+
+
+    .top .crystal-lights-wrapper .crystal {
         background-color: var(--white-color-crystal);
         width: 6rem;
         height: 6rem;
@@ -58,7 +75,7 @@ main {
         margin-left: .5rem;
     }
 
-        .top .crystal .blue-crystal {
+        .top .crystal-lights-wrapper .crystal .blue-crystal {
             background-color: var(--blue-color-crystal);
             width: 5rem;
             height: 5rem;
@@ -69,7 +86,7 @@ main {
             align-items: flex-start;
         }
 
-            .top .crystal .blue-crystal .light-blue {
+            .top .crystal-lights-wrapper .crystal .blue-crystal .light-blue {
                 background-color: var(--light-blue-color-crystal);
                 width: 3.5rem;
                 height: 3.5rem;
@@ -80,7 +97,7 @@ main {
                 align-items: center;
             }
 
-                .top .crystal .blue-crystal .light-blue .white-tiny {
+                .top .crystal-lights-wrapper .crystal .blue-crystal .light-blue .white-tiny {
                     background-color: var(--white-color-tiny-crystal);
                     width: 1rem;
                     height: 1rem;
@@ -117,41 +134,48 @@ main {
     }
     /* BASE PROPERTIES LIGHTS - END*/
 
-    .top .red-light {
+    .top .crystal-lights-wrapper .red-light {
         background-color: var(--red-color-lights);     
     }
 
-        .top .red-light .red-shadow {
+        .top .crystal-lights-wrapper .red-light .red-shadow {
             background-color: var(--red-color-shadow-lights);        
         }
 
-            .top .red-light .red-shadow .red-tiny {
+            .top .crystal-lights-wrapper .red-light .red-shadow .red-tiny {
                 background-color: var(--red-color-tiny-lights);
             }
 
-    .top .yellow-light {
+    .top .crystal-lights-wrapper .yellow-light {
         background-color: var(--yellow-color-lights);
     }
 
-        .top .yellow-light .yellow-shadow {
+        .top .crystal-lights-wrapper .yellow-light .yellow-shadow {
             background-color: var(--yellow-color-shadow-lights);
         }
 
-            .top .yellow-light .yellow-shadow .yellow-tiny {
+            .top .crystal-lights-wrapper .yellow-light .yellow-shadow .yellow-tiny {
                 background-color: var(--yellow-color-tiny-lights);
             }
 
-    .top .green-light {
+    .top .crystal-lights-wrapper .green-light {
             background-color: var(--green-color-lights);
         }
 
-            .top .green-light .green-shadow {
+            .top .crystal-lights-wrapper .green-light .green-shadow {
                 background-color: var(--green-color-shadow-lights);
             }
 
-                .top .green-light .green-shadow .green-tiny {
+                .top .crystal-lights-wrapper .green-light .green-shadow .green-tiny {
                     background-color: var(--green-color-tiny-lights);
                 }
+    .top .top-separator {
+        width: 100%;
+        height: 10%;
+        background-color: var(--red-color-borders);        
+    }
+
+      
     
 /* SCREEN SECTION - START */
 .screens {
@@ -161,6 +185,10 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;  
+}
+
+.screens input, p {
+    color: var(--green-color-lights);    
 }
 
 .screens .screen-border {
@@ -202,7 +230,36 @@ main {
             .screens .dark-red .dark-red-border .pokemon-screen-wrapper .pokemon-screen {
                 background-color: var(--light-yellow-color-pokemon-screen);
                 width: 93%;
-                height: 93%;                
+                height: 93%;
+                display: flex;                
+                justify-content: center;
+                align-items: center; 
+                position: relative;               
+            }
+
+            .screens .dark-red .dark-red-border .pokemon-screen-wrapper .pokemon-screen .msj-error {                
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 1;                
+            }
+            
+            .screens .dark-red .dark-red-border .pokemon-screen-wrapper .pokemon-screen .msj-error p {
+                color: gray;            
+            }
+
+            .screens .dark-red .dark-red-border .pokemon-screen-wrapper .pokemon-screen .hide-msj {
+                display: none;
+            }
+
+
+            .screens .dark-red .dark-red-border .pokemon-screen-wrapper .pokemon-screen img {
+                width: 65%;
+                
             }
 
         .screens .dark-red .dark-red-border .pokemon-stats-wrapper {            
@@ -212,8 +269,55 @@ main {
             .screens .dark-red .dark-red-border .pokemon-stats-wrapper .pokemon-stats-screen {
                 background-color: var(--dark-green-color-screens);
                 width: 93%;
-                height: 90%;               
-            }
+                height: 90%;
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                font-size: 1rem;
+                text-align: center;                                
+            }             
+
+                .screens .dark-red .dark-red-border .pokemon-stats-wrapper .pokemon-stats-screen div p {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+
+                .screens .dark-red .dark-red-border .pokemon-stats-wrapper .pokemon-stats-screen .number {
+                    font-size: 1rem;
+                }
+
+                .screens .dark-red .dark-red-border .pokemon-stats-wrapper .pokemon-stats-screen .hp {                                        
+                    grid-column: 1 / 2;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                    .screens .dark-red .dark-red-border .pokemon-stats-wrapper .pokemon-stats-screen div .align-stats {
+                        width: 100%;
+                        height: 50%;                       
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                    }                    
+
+                .screens .dark-red .dark-red-border .pokemon-stats-wrapper .pokemon-stats-screen .attack {                   
+                    grid-column: 2 / 3;
+                }
+
+                .screens .dark-red .dark-red-border .pokemon-stats-wrapper .pokemon-stats-screen .defense {                    
+                    grid-column: 3 / 4;
+                }
+
+                .screens .dark-red .dark-red-border .pokemon-stats-wrapper .pokemon-stats-screen .speed {                    
+                    grid-column: 4 / 5;
+                }
+
+                .screens .dark-red .dark-red-border .pokemon-stats-wrapper .pokemon-stats-screen .sattack {                   
+                    grid-column: 5 / 6;
+                }
+
+                .screens .dark-red .dark-red-border .pokemon-stats-wrapper .pokemon-stats-screen .sdefense {                   
+                    grid-column: 6 / 7;
+                }
 
             .screens .dark-red .dark-red-border .other-controllers {
                 background-color: var(--red-color-borders);
@@ -233,6 +337,7 @@ main {
                         border: none;
                         width: 97%;
                         height: 90%;
+                        text-align: center;
                     }
 
                     .screens .dark-red .dark-red-border .other-controllers .type-pokemon-wrapper .type-pokemon input:focus {
@@ -253,8 +358,7 @@ main {
                     height: 4rem;
                     border-radius: 50%;
                     display: flex;                    
-                    justify-content: flex-end;
-                    align-items: fle;
+                    justify-content: flex-end;                    
                     text-decoration: none;                    
                 }
 
@@ -272,6 +376,10 @@ main {
 
                 .screens .dark-red .dark-red-border .other-controllers .height-screen-wrapper {
                     grid-column: 1 / 2;
+                }
+
+                .screens .dark-red .dark-red-border .other-controllers .height-screen-wrapper .height-screen {
+                    text-align: center;                    
                 }
                    
                 .screens .dark-red .dark-red-border .other-controllers .blue-buttons-wrapper {
@@ -301,10 +409,76 @@ main {
                     grid-column: 1 / 2;
                 }
 
-       
+                    .screens .dark-red .dark-red-border .other-controllers .weight-screen-wrapper .weight-screen {
+                        text-align: center;                    
+                    }  
             
 
             
     
 
 /* SCREEN SECTION - END */
+
+@media (max-height: 815px) {
+    .top .crystal-lights-wrapper .crystal {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .top .crystal-lights-wrapper .crystal .blue-crystal {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .top .crystal-lights-wrapper .crystal .blue-crystal .light-blue {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .top .crystal-lights-wrapper .crystal .blue-crystal .light-blue .white-tiny {
+        width: .4rem;
+        height: .4rem;
+        margin-bottom: .4rem;
+    }
+
+    .screens .dark-red .dark-red-border .pokemon-stats-wrapper .pokemon-stats-screen div .align-stats:first-child {     
+        justify-content: flex-start;
+        margin-top: 2px;
+    }
+
+    .screens .dark-red .dark-red-border .pokemon-screen-wrapper .pokemon-screen img {
+        width: 56%;        
+    }
+}
+
+@media (min-width: 820px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main {
+        width: 620px;
+        height: 1180;
+    }
+
+}
+
+@media (max-width: 370px) {
+    .screens .dark-red .dark-red-border .pokemon-stats-wrapper .pokemon-stats-screen .number {
+        font-size: .8rem;
+    }
+
+    .screens .dark-red .dark-red-border .pokemon-stats-wrapper .pokemon-stats-screen {
+        font-size: .8rem;
+    }
+
+    .screens .dark-red .dark-red-border .other-controllers input, p {
+        font-size: .7rem;
+    }
+
+}
+
+

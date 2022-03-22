@@ -15,51 +15,118 @@
 <body>
     <main>
         <div class="top">
-            <div class="crystal">
-                <div class="blue-crystal">
-                    <div class="light-blue">
-                        <div class="white-tiny"></div>
+            <div class="crystal-lights-wrapper">
+                <div class="crystal">
+                    <div class="blue-crystal">
+                        <div class="light-blue">
+                            <div class="white-tiny"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="red-light colors-lights-base">
+                    <div class="red-shadow color-lights-shadows">
+                        <div class="red-tiny color-lights-tiny"></div>
+                    </div>
+                </div>
+                <div class="yellow-light colors-lights-base">
+                    <div class="yellow-shadow color-lights-shadows">
+                        <div class="yellow-tiny color-lights-tiny"></div>
+                    </div>
+                </div>
+                <div class="green-light colors-lights-base">
+                    <div class="green-shadow color-lights-shadows">
+                        <div class="green-tiny color-lights-tiny"></div>
                     </div>
                 </div>
             </div>
-            <div class="red-light colors-lights-base">
-                <div class="red-shadow color-lights-shadows">
-                    <div class="red-tiny color-lights-tiny"></div>
-                </div>
-            </div>
-            <div class="yellow-light colors-lights-base">
-                <div class="yellow-shadow color-lights-shadows">
-                    <div class="yellow-tiny color-lights-tiny"></div>
-                </div>
-            </div>
-            <div class="green-light colors-lights-base">
-                <div class="green-shadow color-lights-shadows">
-                    <div class="green-tiny color-lights-tiny"></div>
-                </div>
+            <div class="top-separator">
             </div>
         </div>
         <div class="screens">
             <div class="dark-red">
                 <div class="dark-red-border">
                     <div class="pokemon-screen-wrapper screen-border">
-                        <div class="pokemon-screen"></div>
+                        <div class="pokemon-screen">
+                            <div id="pokemon-screen-error-msj" class="msj-error hide-msj">
+                                <p>Error</p>
+                                <p>Pokemon no encontrado</p>
+                            </div>
+                            <img id="pokemon-image" src="" alt="">
+                        </div>
                     </div>
                     <div class="pokemon-stats-wrapper screen-border">
-                        <div class="pokemon-stats-screen"></div>
+                        <div class="pokemon-stats-screen">
+                            <div class="hp">
+                                <div class="align-stats">
+                                    <p id="pokemon-hp" class="number">000</p>
+                                </div>
+                                <div class="align-stats">
+                                    <p class="stat-name">HP</p>
+                                </div>
+                            </div>
+                            <div class="attack">
+                                <div class="align-stats">
+                                    <p id="pokemon-atk" class="number">000</p>
+                                </div>
+                                <div class="align-stats">
+                                    <p>ATQ</p>
+                                </div>
+                            </div>
+                            <div class="defense">
+                                <div class="align-stats">
+                                    <p id="pokemon-def" class="number">000</p>
+                                </div>
+                                <div class="align-stats">
+                                    <p>DEF</p>
+                                </div>
+                            </div>
+                            <div class="speed">
+                                <div class="align-stats">
+                                    <p id="pokemon-spd" class="number">000</p>
+                                </div>
+                                <div class="align-stats">
+                                    <p>VEL</p>
+                                </div>
+                            </div>
+                            <div class="sattack">
+                                <div class="align-stats">
+                                    <p id="pokemon-sat" class="number">000</p>
+                                </div>
+                                <div class="align-stats">
+                                    <div class="name-wrapper">
+                                        <p>ATQ</p>
+                                        <p>ESP</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sdefense">
+                                <div class="align-stats">
+                                    <p id="pokemon-sdf" class="number">000</p>
+                                </div>
+                                <div class="align-stats">
+                                    <div class="name-wrapper">
+                                        <p>DEF</p>
+                                        <p>ESP</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="other-controllers">
                         <div class="type-pokemon-wrapper screen-border">
                             <div class="type-pokemon small-screens">
-                                <input type="text" name="pokemons-name" id="pokemons-name" placeholder="Type">
+                                <input type="text" name="pokemon" id="pokemon" placeholder="Nombre del Pokemon">
                             </div>
                         </div>
                         <div class="search-button-wrapper">
-                            <a class="search-button-base" href="#">
+                            <a id="search" class="search-button-base" href="#">
                                 <div class="content-search-button">Play</div>
                             </a>
                         </div>
                         <div class="height-screen-wrapper screen-border">
-                            <div class="height-screen small-screens"></div>
+                            <div class="height-screen small-screens">
+                                <p id="height">Altura: 00cm</p>
+                            </div>
                         </div>
                         <div class="blue-buttons-wrapper">
                             <div class="blue-buttons">
@@ -69,13 +136,17 @@
                             </div>
                         </div>
                         <div class="weight-screen-wrapper screen-border">
-                            <div class="weight-screen small-screens"></div>
+                            <div class="weight-screen small-screens">
+                                <p id="weight">Peso: 00Kg</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <script src="./assets/js/index.js"></script>
 
 </body>
 
